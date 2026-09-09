@@ -14,5 +14,11 @@ jobs:
 
       - name: Run SAST
         run: |
-           pip install semgrep
-           semgrep scan --config auto .
+          pip install semgrep
+          semgrep scan --config auto .
+
+      - name: Run SCA
+        run: |
+          pip install pip-audit
+          pip-audit -r requirements.txt
+      
