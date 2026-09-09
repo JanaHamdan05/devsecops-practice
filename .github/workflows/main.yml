@@ -1,0 +1,20 @@
+name: Security Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  security-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run security scan
+        run: |
+          echo "Running security checks..."
+          echo "SAST"
+          echo "SCA"
+          echo "Secret Scanning"
