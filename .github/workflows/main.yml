@@ -12,9 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Run security scan
+      - name: Run SAST
         run: |
-          echo "Running security checks..."
-          echo "SAST"
-          echo "SCA"
-          echo "Secret Scanning"
+           pip install semgrep
+           semgrep scan --config auto .
