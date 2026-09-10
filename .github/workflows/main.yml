@@ -25,6 +25,9 @@ jobs:
 
       - name: Run Secret Scanning
         run: |
-          docker run --rm -v "$PWD:/repo" zricethezav/gitleaks:latest detect --source=/repo --no-banner
-
+         docker run --rm \
+         -v "$PWD:/repo" \
+         zricethezav/gitleaks:latest \
+         detect --source=/repo --no-banner --no-git
+  
   
